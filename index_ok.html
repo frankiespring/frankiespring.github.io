@@ -1,0 +1,46 @@
+---
+layout: default
+title: Frankie Spring
+---
+
+<h1>Welcome to Frankie Spring's Book Collection</h1>
+<p>Discover relaxing, beautiful coloring books and journals crafted for peace, creativity, and joy.</p>
+
+<div class="book-grid">
+  {% for book in site.books %}
+    <div class="book-box">
+      <a href="{{ book.url }}">
+        <img src="{{ book.cover_image }}" alt="{{ book.title }}" class="cover-thumb">
+        <p>{{ book.title }}</p>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.book-box {
+  border: 1px solid #eee;
+  padding: 10px;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.book-box:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.cover-thumb {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+</style>

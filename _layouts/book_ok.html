@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} | Frankie Spring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .cover-image {
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin: 20px auto;
+    }
+    .sample-gallery img {
+      width: 48%;
+      margin: 1%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>{{ page.title }}</h1>
+  <img src="{{ page.cover_image }}" alt="Cover image" class="cover-image">
+  <p>{{ page.description }}</p>
+
+  {% if page.sample_images %}
+    <h2>Sample Pages</h2>
+    <div class="sample-gallery">
+      {% for img in page.sample_images %}
+        <img src="{{ img }}" alt="Sample page">
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <!-- Optional: Add video, table of contents, or purchase link here -->
+  {% if page.purchase_link %}
+    <p><a href="{{ page.purchase_link }}" target="_blank">Buy on Amazon</a></p>
+  {% endif %}
+
+  <p><a href="/">← Back to all books</a></p>
+</body>
+</html>

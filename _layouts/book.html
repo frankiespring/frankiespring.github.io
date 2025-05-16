@@ -2,17 +2,18 @@
 layout: default
 ---
 
-<h2>{{ page.title }}</h2>
-<img src="{{ page.cover }}" alt="{{ page.title }} cover" width="300">
-<p>{{ page.description }}</p>
+{% assign book = site.data.books | where: "id", page.book_id | first %}
 
-{% if page.video %}
-<iframe width="560" height="315" src="{{ page.video }}" frameborder="0" allowfullscreen></iframe>
-{% endif %}
+<h1>{{ book.title }}</h1>
+<h3>{{ book.subtitle }}</h3>
+<img src="{{ book.cover_image }}" width="300"/>
 
-<h3>Sample Pages</h3>
-{% for image in page.sample_images %}
-  <img src="{{ image }}" width="300">
+<p>{{ book.description }}</p>
+
+<h4>Sample Pages</h4>
+{% for image in book.samples %}
+  <img src="{{ image }}" width="200" style="margin: 10px"/>
 {% endfor %}
 
-<p><a href="{{ page.amazon_link }}" target="_blank">View on Amazon</a></p>
+<h4>Buy on Amazon</h4>
+<img src="{{ book.qr_code }}" width="150"/>
