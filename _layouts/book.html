@@ -6,14 +6,20 @@ layout: default
 
 <h1>{{ book.title }}</h1>
 <h3>{{ book.subtitle }}</h3>
-<img src="{{ book.cover_image }}" width="300"/>
+<img src="{{ book.cover_image }}" width="300" alt="{{ book.title }} cover" />
 
 <p>{{ book.description }}</p>
 
-<h4>Sample Pages</h4>
-{% for image in book.samples %}
-  <img src="{{ image }}" width="200" style="margin: 10px"/>
-{% endfor %}
+{% if book.samples %}
+  <h4>Sample Pages</h4>
+  {% for image in book.samples %}
+    <img src="{{ image }}" width="200" style="margin: 10px" alt="Sample page" />
+  {% endfor %}
+{% endif %}
 
-<h4>Buy on Amazon</h4>
-<img src="{{ book.qr_code }}" width="150"/>
+{% if book.purchase_link %}
+  <h4>Buy on Amazon</h4>
+  <p><a href="{{ book.purchase_link }}" target="_blank">Purchase Here</a></p>
+{% endif %}
+
+<p><a href="/books.html">← Back to all books</a></p>

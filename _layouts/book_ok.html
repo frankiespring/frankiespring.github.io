@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +16,7 @@
       padding: 0 20px;
       line-height: 1.6;
     }
-    h1, h2 {
+    h1, h2, h3, h4 {
       color: #333;
     }
     .cover-image {
@@ -27,27 +31,44 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+    .qr-code {
+      display: block;
+      margin: 20px auto;
+      width: 150px;
+    }
+    .back-link {
+      margin-top: 40px;
+      display: block;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <h1>{{ page.title }}</h1>
-  <img src="{{ page.cover_image }}" alt="Cover image" class="cover-image">
-  <p>{{ page.description }}</p>
+  {% if page.subtitle %}
+    <h2>{{ page.subtitle }}</h2>
+  {% endif %}
+  {% if page.cover_image %}
+    <img src="{{ page.cover_image }}" alt="{{ page.title }} cover" class="cover-image">
+  {% endif %}
+  {% if page.description %}
+    <p>{{ page.description }}</p>
+  {% endif %}
 
-  {% if page.sample_images %}
-    <h2>Sample Pages</h2>
+  {% if page.samples %}
+    <h3>Sample Pages</h3>
     <div class="sample-gallery">
-      {% for img in page.sample_images %}
-        <img src="{{ img }}" alt="Sample page">
+      {% for sample in page.samples %}
+        <img src="{{ sample }}" alt="Sample page">
       {% endfor %}
     </div>
   {% endif %}
 
-  <!-- Optional: Add video, table of contents, or purchase link here -->
-  {% if page.purchase_link %}
-    <p><a href="{{ page.purchase_link }}" target="_blank">Buy on Amazon</a></p>
+  {% if page.qr_code %}
+    <h3>Buy on Amazon</h3>
+    <img src="{{ page.qr_code }}" alt="QR Code" class="qr-code">
   {% endif %}
 
-  <p><a href="/">← Back to all books</a></p>
+  <a href="/books.html" class="back-link">← Back to all books</a>
 </body>
 </html>
