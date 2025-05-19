@@ -5,7 +5,7 @@ title: Frankie Spring’s Coloring Books
 
 Welcome to the creative world of **Frankie Spring**!
 
-Explore my books:
+Explore my books :
 <ul>
   {% for book in site.data.books %}
     <li>
