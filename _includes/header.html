@@ -18,11 +18,14 @@
 </header>
 
 <style>
+/* Option 1: Soft Creative Gradient */
+/*
 .site-header {
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 30px 0;
   position: relative;
-  background-color: white;
+  background: linear-gradient(135deg, #f6f8ff 0%, #f0f4ff 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .wrapper {
@@ -44,6 +47,7 @@
   height: 200px;
   width: auto;
   max-width: none;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .site-nav {
@@ -58,31 +62,143 @@
 }
 
 .page-link {
-  color: #333;
-  text-decoration: none;
-  font-size: 1.4rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  color: #4a5568;
 }
 
 .page-link:hover {
-  color: #007bff;
+  color: #4361ee;
+  background-color: rgba(67, 97, 238, 0.05);
+  transform: translateY(-1px);
+}
+*/
+
+/* Option 2: Warm Creative */
+/*
+.site-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 30px 0;
+  position: relative;
+  background: linear-gradient(135deg, #fff9f6 0%, #fff4f1 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.site-logo {
+  height: 200px;
+  width: auto;
+  max-width: none;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.trigger {
+  display: flex;
+  gap: 40px;
+}
+
+.page-link {
+  color: #4a4036;
+}
+
+.page-link:hover {
+  color: #e07a5f;
+  background-color: rgba(224, 122, 95, 0.05);
+  transform: translateY(-1px);
+}
+*/
+
+/* Option 3: Nature Inspired */
+.site-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 0;
+  position: relative;
+  background: linear-gradient(135deg, #f8fff6 0%, #f1f9ef 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.site-logo {
+  height: 150px;
+  width: auto;
+  max-width: none;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.trigger {
+  display: flex;
+  gap: 40px;
+}
+
+.page-link {
+  color: #3c4a3e;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.page-link:hover {
+  color: #2d5a27;  /* Darker, more vibrant green */
+  background-color: rgba(88, 129, 87, 0.15);  /* Increased opacity from 0.05 to 0.15 */
+  transform: translateY(-1px);
+  font-weight: 600;  /* Slightly bolder on hover */
 }
 
 @media screen and (max-width: 600px) {
   .wrapper {
     flex-direction: column;
     text-align: center;
-    gap: 20px;
+    gap: 15px;
   }
 
   .trigger {
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
   }
 
   .site-logo {
-    height: 160px;
+    height: 120px;
   }
 }
 </style> 

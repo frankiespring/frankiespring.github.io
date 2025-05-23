@@ -1,21 +1,21 @@
 - id: mandala-book-1
-  title: "Mandala Book 1"
-  subtitle: "Your First Mandala Collection"
+  title: "Mandala Animal Coloring Book for Relaxation"
+  subtitle: "50 Unique Mandala Designs Featuring Adorable Animals – A Fun and Stress-Relieving Coloring Experience for Kids and Adults"
   cover_image: /assets/images/mandala-book-1/cover.jpg
   description: |
-    Your first beautiful mandala coloring book description here.
-  purchase_link: https://www.amazon.com/dp/your-book-1-id
+    Relax and unleash your creativity with Mandala Animal Coloring Book for Relaxation! This fun and stress-relieving book features 50 unique mandala designs, most featuring a cute animal at the center, plus seven pure mandalas for variety.
+  purchase_link: https://www.amazon.com/dp/B0F3NWC2RZ
   samples:
     - /assets/images/mandala-book-1/sample1.jpg
     - /assets/images/mandala-book-1/sample2.jpg
 
 - id: mandala-book-2
-  title: "Mandala Book 2"
-  subtitle: "Your Second Mandala Collection"
+  title: "Mandala Animal Coloring Book for Relaxation: Volume 2"
+  subtitle: "70 All-New Mandala Designs with Cute Animals and Elegant Patterns – A Delightful and Stress-Relieving Coloring Journey for All Ages"
   cover_image: /assets/images/mandala-book-2/cover.jpg
   description: |
-    Your second beautiful mandala coloring book description here.
-  purchase_link: https://www.amazon.com/dp/your-book-2-id
+    Unleash Your Creativity with the Mandala Animal Coloring Book for Relaxation: Volume 2!
+  purchase_link: https://www.amazon.com/dp/B0F6M4ZLKT
   samples:
     - /assets/images/mandala-book-2/sample1.jpg
     - /assets/images/mandala-book-2/sample2.jpg
