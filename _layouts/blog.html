@@ -1,0 +1,105 @@
+---
+layout: default
+---
+
+<div class="blog-container">
+  <div class="blog-main">
+    {{ content }}
+  </div>
+  
+  <div class="blog-sidebar">
+    {% include subscribe.html %}
+    
+    <div class="recent-posts">
+      <h3>Recent Posts</h3>
+      <ul>
+        {% for post in site.posts limit:5 %}
+          <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+.blog-container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.blog-main {
+  min-width: 0;
+}
+
+.blog-sidebar {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+}
+
+.recent-posts {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-top: 20px;
+}
+
+.recent-posts h3 {
+  color: #2d5a27;
+  margin: 0 0 15px 0;
+  font-size: 1.4em;
+}
+
+.recent-posts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recent-posts li {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.recent-posts li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.recent-posts a {
+  color: #4a5568;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.recent-posts a:hover {
+  color: #2d5a27;
+}
+
+.post-date {
+  font-size: 0.8em;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .blog-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .blog-sidebar {
+    position: static;
+  }
+}
+</style> 

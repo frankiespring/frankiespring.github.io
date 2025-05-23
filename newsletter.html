@@ -1,0 +1,170 @@
+---
+layout: default
+title: Newsletter - Stay Connected
+permalink: /newsletter/
+---
+
+<div class="newsletter-page">
+  <div class="newsletter-header">
+    <h1>Stay Connected with Frankie Spring</h1>
+    <p class="lead">Join our community and never miss out on new releases and creative insights!</p>
+  </div>
+
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <h3>🎨 New Book Alerts</h3>
+      <p>Be the first to know when new coloring books are released on Amazon KDP.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <h3>📝 Blog Updates</h3>
+      <p>Get notified about new blog posts featuring coloring tips, creativity inspiration, and more.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <h3>🎁 Exclusive Content</h3>
+      <p>Access to subscriber-only content, including free coloring pages and early previews.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <h3>🌟 Special Offers</h3>
+      <p>Receive special promotional offers and launch day discounts for new books.</p>
+    </div>
+  </div>
+
+  <div class="subscription-container">
+    {% include subscribe.html %}
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>How often will I receive emails?</h3>
+        <p>We send emails only when there's something valuable to share - typically 2-4 times per month. Your inbox won't be overwhelmed!</p>
+      </div>
+      
+      <div class="faq-item">
+        <h3>What kind of content will I receive?</h3>
+        <p>You'll receive notifications about new book releases, blog posts about creativity and coloring, exclusive offers, and occasional free content.</p>
+      </div>
+      
+      <div class="faq-item">
+        <h3>Can I unsubscribe anytime?</h3>
+        <p>Absolutely! Every email includes an unsubscribe link at the bottom. One click and you're out - no questions asked.</p>
+      </div>
+      
+      <div class="faq-item">
+        <h3>Is my information secure?</h3>
+        <p>Yes! We never share your personal information with third parties. Your email is used solely for our newsletter communications.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.newsletter-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.newsletter-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.newsletter-header h1 {
+  color: #2d5a27;
+  margin-bottom: 15px;
+}
+
+.lead {
+  font-size: 1.2em;
+  color: #4a5568;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.benefit-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-card h3 {
+  color: #2d5a27;
+  margin: 0 0 15px 0;
+  font-size: 1.2em;
+}
+
+.benefit-card p {
+  color: #4a5568;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.subscription-container {
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+.faq-section {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.faq-section h2 {
+  color: #2d5a27;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
+
+.faq-item h3 {
+  color: #2d5a27;
+  margin: 0 0 10px 0;
+  font-size: 1.1em;
+}
+
+.faq-item p {
+  color: #4a5568;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .newsletter-page {
+    padding: 20px;
+  }
+  
+  .faq-section {
+    padding: 30px 20px;
+  }
+}
+</style> 

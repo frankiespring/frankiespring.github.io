@@ -1,0 +1,93 @@
+<div class="subscribe-form">
+  <h3>Stay Updated!</h3>
+  <p>Subscribe to receive notifications about new books and blog posts.</p>
+  
+  <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="signup-form">
+    <div class="form-group">
+      <input type="email" name="email" placeholder="Enter your email address" required>
+      <button type="submit">Subscribe</button>
+    </div>
+    <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+  </form>
+</div>
+
+<style>
+.subscribe-form {
+  background: linear-gradient(135deg, #f8fff6 0%, #f1f9ef 100%);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin: 20px 0;
+  text-align: center;
+}
+
+.subscribe-form h3 {
+  color: #2d5a27;
+  margin: 0 0 10px 0;
+  font-size: 1.4em;
+}
+
+.subscribe-form p {
+  color: #4a5568;
+  margin-bottom: 20px;
+  font-size: 1em;
+}
+
+.signup-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.form-group input[type="email"] {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 1em;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input[type="email"]:focus {
+  border-color: #2d5a27;
+  box-shadow: 0 0 0 2px rgba(45, 90, 39, 0.1);
+}
+
+.form-group button {
+  background: #2d5a27;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.form-group button:hover {
+  background: #3a7034;
+  transform: translateY(-1px);
+}
+
+.privacy-note {
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .form-group {
+    flex-direction: column;
+  }
+  
+  .form-group button {
+    width: 100%;
+  }
+}
+</style> 
