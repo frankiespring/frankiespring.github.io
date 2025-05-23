@@ -1,22 +1,42 @@
 - id: mandala-book-1
-  title: "Mandala Animal Coloring Book for Relaxation"
-  subtitle: "50 Unique Mandala Designs Featuring Adorable Animals – A Fun and Stress-Relieving Coloring Experience for Kids and Adults"
-  description: >
-    Relax and unleash your creativity with Mandala Animal Coloring Book for Relaxation! ...
+  title: "Mandala Book 1"
+  subtitle: "Your First Mandala Collection"
   cover_image: /assets/images/mandala-book-1/cover.jpg
-  qr_code: /assets/images/mandala-book-1/qr-code.png
+  description: |
+    Your first beautiful mandala coloring book description here.
+  purchase_link: https://www.amazon.com/dp/your-book-1-id
   samples:
     - /assets/images/mandala-book-1/sample1.jpg
     - /assets/images/mandala-book-1/sample2.jpg
-  slug: mandala-book-1
 
 - id: mandala-book-2
-  title: "Mandala Animal Coloring Book for Relaxation: Volume 2"
-  subtitle: "70 All-New Mandala Designs with Cute Animals and Elegant Patterns – A Delightful and Stress-Relieving Coloring Journey for All Ages"
-  description: >
-    Unleash Your Creativity with the Mandala Animal Coloring Book for Relaxation: Volume 2! ...
+  title: "Mandala Book 2"
+  subtitle: "Your Second Mandala Collection"
   cover_image: /assets/images/mandala-book-2/cover.jpg
-  qr_code: /assets/images/mandala-book-2/qr-code.png
+  description: |
+    Your second beautiful mandala coloring book description here.
+  purchase_link: https://www.amazon.com/dp/your-book-2-id
   samples:
     - /assets/images/mandala-book-2/sample1.jpg
-  slug: mandala-book-2
+    - /assets/images/mandala-book-2/sample2.jpg
+
+- id: mandala-book-3
+  title: "Mandala Animal Coloring Book for Relaxation: Volume 3"
+  subtitle: "70 New Mandala Designs Featuring Playful Animals - A Captivating and Mindful Coloring Adventure for All Ages"
+  cover_image: /assets/images/mandala-book-3/cover.jpg
+  description: |
+    Continue your creativity and find your calm with Volume 3 of the Mandala Animal Coloring Book for Relaxation series!
+
+    This third installment offers 70 completely new, single-sided pages filled with intricate mandala patterns and adorable animal designs—thoughtfully created to inspire artistic expression and promote soothing relaxation.
+
+    Whether you're a seasoned colorist or just discovering the joy of coloring, you'll love:
+    • A delightful variety of animals surrounded by mesmerizing mandala patterns
+    • High-quality illustrations perfect for colored pencils, markers, or gel pens
+    • Single-sided pages to prevent bleed-through and make it easy to frame your favorites
+    • A mindful escape that reduces stress, sparks creativity, and brings joy to colorists of all ages
+
+    Perfect for adults, teens, and kids alike, this coloring book with intricate patterns and charming creatures is your next calming adventure through the world of art and animals. Add Volume 3 to your collection today and keep the relaxation going!
+  purchase_link: https://www.amazon.com/dp/B0F92QPJCR
+  samples:
+    - /assets/images/mandala-book-3/sample1.jpg
+    - /assets/images/mandala-book-3/sample2.jpg

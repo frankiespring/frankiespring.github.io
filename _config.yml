@@ -1,6 +1,19 @@
-title: Frankie Spring
-description: Official website for Frankie Spring’s coloring books
+# _config.yml
+title: SpringLight Publishing
+description: Beautiful coloring books and journals crafted for peace, creativity, and joy
 baseurl: "" 
 url: "https://frankiespring.github.io"
 theme: minima
 markdown: kramdown
+
+# Collections configuration
+collections:
+  books:
+    output: true
+    permalink: /books/:name.html
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag

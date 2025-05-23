@@ -1,0 +1,22 @@
+- id: mandala-book-1
+  title: "Mandala Animal Coloring Book for Relaxation"
+  subtitle: "50 Unique Mandala Designs Featuring Adorable Animals – A Fun and Stress-Relieving Coloring Experience for Kids and Adults"
+  description: >
+    Relax and unleash your creativity with Mandala Animal Coloring Book for Relaxation! ...
+  cover_image: /assets/images/mandala-book-1/cover.jpg
+  qr_code: /assets/images/mandala-book-1/qr-code.png
+  samples:
+    - /assets/images/mandala-book-1/sample1.jpg
+    - /assets/images/mandala-book-1/sample2.jpg
+  slug: mandala-book-1
+
+- id: mandala-book-2
+  title: "Mandala Animal Coloring Book for Relaxation: Volume 2"
+  subtitle: "70 All-New Mandala Designs with Cute Animals and Elegant Patterns – A Delightful and Stress-Relieving Coloring Journey for All Ages"
+  description: >
+    Unleash Your Creativity with the Mandala Animal Coloring Book for Relaxation: Volume 2! ...
+  cover_image: /assets/images/mandala-book-2/cover.jpg
+  qr_code: /assets/images/mandala-book-2/qr-code.png
+  samples:
+    - /assets/images/mandala-book-2/sample1.jpg
+  slug: mandala-book-2
