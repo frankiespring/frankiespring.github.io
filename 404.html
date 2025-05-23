@@ -1,25 +1,146 @@
 ---
+layout: default
+title: Page Not Found
 permalink: /404.html
-layout: page
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<div class="error-page">
+  <div class="error-content">
+    <h1>Oops! Page Not Found</h1>
+    <div class="error-illustration">
+      <img src="/assets/images/404-illustration.svg" alt="404 Illustration" class="error-image">
+    </div>
+    <p class="error-message">Looks like this page has wandered off the coloring page! Don't worry, we've got plenty of other creative spaces to explore.</p>
+    
+    <div class="helpful-links">
+      <h2>Where would you like to go?</h2>
+      <div class="link-grid">
+        <a href="/" class="link-card">
+          <i class="fas fa-home"></i>
+          <span>Home Page</span>
+          <small>Return to the main page</small>
+        </a>
+        <a href="/books" class="link-card">
+          <i class="fas fa-book"></i>
+          <span>Coloring Books</span>
+          <small>Browse our collection</small>
+        </a>
+        <a href="/blog" class="link-card">
+          <i class="fas fa-pen-fancy"></i>
+          <span>Blog</span>
+          <small>Read latest articles</small>
+        </a>
+        <a href="/contact" class="link-card">
+          <i class="fas fa-envelope"></i>
+          <span>Contact Us</span>
+          <small>Get in touch</small>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
+
+<style>
+.error-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.error-content {
+  max-width: 800px;
+  text-align: center;
+}
+
+.error-content h1 {
+  color: #2d5a27;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+.error-illustration {
+  max-width: 400px;
+  margin: 0 auto 40px;
+}
+
+.error-image {
+  width: 100%;
+  height: auto;
+}
+
+.error-message {
+  font-size: 1.2em;
+  color: #4a5568;
+  margin-bottom: 40px;
+}
+
+.helpful-links {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.helpful-links h2 {
+  color: #2d5a27;
+  margin-bottom: 25px;
+  font-size: 1.5em;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.link-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.link-card:hover {
+  transform: translateY(-5px);
+  background: #e9ecef;
+}
+
+.link-card i {
+  font-size: 2em;
+  color: #2d5a27;
+  margin-bottom: 10px;
+}
+
+.link-card span {
+  font-weight: 500;
+  color: #2d5a27;
+  margin-bottom: 5px;
+}
+
+.link-card small {
+  color: #6c757d;
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .error-content h1 {
+    font-size: 2em;
+  }
+  
+  .error-illustration {
+    max-width: 300px;
+  }
+  
+  .link-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

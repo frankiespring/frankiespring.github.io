@@ -1,0 +1,148 @@
+<!-- Site Footer -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/books">Books</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Latest Books</h3>
+      <ul>
+        {% for book in site.books limit:3 %}
+        <li><a href="{{ book.url }}">{{ book.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Connect With Us</h3>
+      <div class="social-links">
+        <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+      </div>
+      <div class="newsletter-brief">
+        <h4>Stay Updated</h4>
+        <p>Join our newsletter for latest updates and exclusive content.</p>
+        <a href="/newsletter" class="footer-button">Subscribe Now</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; {{ 'now' | date: "%Y" }} Frankie Spring. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+  padding: 60px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-section h3 {
+  color: #2d5a27;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #4a5568;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #2d5a27;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-link {
+  color: #2d5a27;
+  font-size: 1.5em;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+}
+
+.newsletter-brief {
+  margin-top: 20px;
+}
+
+.newsletter-brief h4 {
+  color: #2d5a27;
+  margin-bottom: 10px;
+}
+
+.newsletter-brief p {
+  color: #4a5568;
+  margin-bottom: 15px;
+}
+
+.footer-button {
+  display: inline-block;
+  background: #2d5a27;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.footer-button:hover {
+  background: #3a7034;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid #dee2e6;
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
+</style> 

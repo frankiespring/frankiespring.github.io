@@ -14,6 +14,14 @@ layout: default
       <h1>{{ page.title }}</h1>
       <div class="post-meta">
         <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+        {% if page.author %}
+          <span class="post-author">by {{ page.author }}</span>
+        {% endif %}
+        <span class="reading-time">
+          {% assign words = content | number_of_words %}
+          {% assign reading_time = words | divided_by: 200 | plus: 1 %}
+          {{ reading_time }} min read
+        </span>
         {% if page.categories %}
           <span class="post-categories">
             {% for category in page.categories %}
@@ -25,29 +33,52 @@ layout: default
     </div>
   </div>
 
-  <div class="post-content">
-    {{ content }}
+  <div class="post-container">
+    <div class="table-of-contents">
+      <h3>Table of Contents</h3>
+      {% assign headers = content | split: '<h2' %}
+      <ul>
+        {% for header in headers offset: 1 %}
+          {% assign title = header | split: '</h2>' | first | split: '>' | last %}
+          <li><a href="#{{ title | slugify }}">{{ title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="post-content">
+      {{ content }}
+    </div>
   </div>
 
   <div class="post-footer">
+    <div class="author-section">
+      {% if page.author_image %}
+        <img src="{{ page.author_image }}" alt="{{ page.author }}" class="author-image">
+      {% endif %}
+      <div class="author-info">
+        <h3>About the Author</h3>
+        <p>{{ page.author_bio | default: "Passionate about creating beautiful coloring books and sharing creative inspiration." }}</p>
+      </div>
+    </div>
+
     <div class="share-section">
       <h3>Share this post</h3>
       <div class="share-buttons">
         <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url }}" target="_blank" class="share-button twitter">
-          Share on Twitter
+          <i class="fab fa-twitter"></i> Share on Twitter
         </a>
         <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" target="_blank" class="share-button facebook">
-          Share on Facebook
+          <i class="fab fa-facebook"></i> Share on Facebook
         </a>
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title | url_encode }}" target="_blank" class="share-button linkedin">
-          Share on LinkedIn
+        <a href="https://www.pinterest.com/pin/create/button/?url={{ site.url }}{{ page.url }}&media={{ site.url }}{{ page.image }}&description={{ page.title | url_encode }}" target="_blank" class="share-button pinterest">
+          <i class="fab fa-pinterest"></i> Save to Pinterest
         </a>
       </div>
     </div>
 
     {% if site.related_posts.size > 0 %}
       <div class="related-posts">
-        <h3>Related Posts</h3>
+        <h3>You Might Also Like</h3>
         <div class="related-grid">
           {% for post in site.related_posts limit:3 %}
             <a href="{{ post.url }}" class="related-post">
@@ -70,7 +101,7 @@ layout: default
 
 <style>
 .post {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
 }
@@ -100,20 +131,55 @@ layout: default
 .post-meta {
   color: #666;
   margin-bottom: 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.post-categories {
-  margin-left: 10px;
-}
-
-.post-categories a {
+.post-author, .reading-time {
   color: #2d5a27;
-  text-decoration: none;
-  margin-right: 5px;
 }
 
-.post-categories a:hover {
-  text-decoration: underline;
+.post-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.table-of-contents {
+  position: sticky;
+  top: 20px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.table-of-contents h3 {
+  color: #2d5a27;
+  margin-bottom: 15px;
+}
+
+.table-of-contents ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.table-of-contents li {
+  margin-bottom: 10px;
+}
+
+.table-of-contents a {
+  color: #4a5568;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.table-of-contents a:hover {
+  color: #2d5a27;
 }
 
 .post-content {
@@ -122,9 +188,10 @@ layout: default
   color: #333;
 }
 
-.post-content h2, .post-content h3 {
+.post-content h2 {
   color: #2d5a27;
-  margin: 1.5em 0 0.5em;
+  margin: 2em 0 1em;
+  font-size: 1.8em;
 }
 
 .post-content p {
@@ -137,20 +204,31 @@ layout: default
   margin: 2em 0;
 }
 
-.post-footer {
-  margin-top: 60px;
-  padding-top: 40px;
-  border-top: 1px solid #eee;
+.author-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.author-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-info h3 {
+  color: #2d5a27;
+  margin-bottom: 10px;
 }
 
 .share-section {
   text-align: center;
-  margin-bottom: 40px;
-}
-
-.share-section h3 {
-  color: #2d5a27;
-  margin-bottom: 20px;
+  margin: 40px 0;
 }
 
 .share-buttons {
@@ -160,16 +238,19 @@ layout: default
 }
 
 .share-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 10px 20px;
   border-radius: 25px;
   color: white;
   text-decoration: none;
   font-size: 0.9em;
-  transition: opacity 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .share-button:hover {
-  opacity: 0.9;
+  transform: translateY(-3px);
 }
 
 .share-button.twitter {
@@ -180,8 +261,8 @@ layout: default
   background: #4267B2;
 }
 
-.share-button.linkedin {
-  background: #0077B5;
+.share-button.pinterest {
+  background: #E60023;
 }
 
 .related-posts {
@@ -228,6 +309,17 @@ layout: default
   margin-top: 60px;
 }
 
+@media (max-width: 1024px) {
+  .post-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .table-of-contents {
+    position: static;
+    margin-bottom: 40px;
+  }
+}
+
 @media (max-width: 768px) {
   .post-hero img {
     height: 300px;
@@ -239,6 +331,11 @@ layout: default
   
   .related-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .author-section {
+    flex-direction: column;
+    text-align: center;
   }
 }
 </style> 
