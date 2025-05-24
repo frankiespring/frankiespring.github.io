@@ -29,9 +29,9 @@ permalink: /blog/
         <p class="excerpt">{{ featured_post.excerpt | strip_html | truncatewords: 50 }}</p>
         <a href="{{ featured_post.url }}" class="read-more">Read More →</a>
       </div>
-      {% if featured_post.image %}
+      {% if featured_post.image and featured_post.image != "" and featured_post.image != nil %}
         <div class="featured-image">
-          <img src="{{ featured_post.image }}" alt="{{ featured_post.title }}">
+          <img src="{{ featured_post.image }}" alt="Featured image for {{ featured_post.title }}" onerror="this.parentElement.style.display='none'">
         </div>
       {% endif %}
     </div>
@@ -42,9 +42,9 @@ permalink: /blog/
       <div class="blog-grid">
         {% for post in non_featured_posts %}
           <article class="post-card">
-            {% if post.image %}
+            {% if post.image and post.image != "" and post.image != nil %}
               <div class="post-image">
-                <img src="{{ post.image }}" alt="{{ post.title }}">
+                <img src="{{ post.image }}" alt="Image for {{ post.title }}" onerror="this.parentElement.style.display='none'">
               </div>
             {% endif %}
             <div class="post-content">
