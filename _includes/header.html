@@ -10,7 +10,7 @@
       <div class="trigger">
         <a class="page-link {% if page.url == '/' %}active{% endif %}" href="{{ site.baseurl }}/">Home</a>
         <a class="page-link {% if page.url contains '/books' %}active{% endif %}" href="{{ site.baseurl }}/books">Books</a>
-        <a class="page-link {% if page.url contains '/blog' %}active{% endif %}" href="{{ site.baseurl }}/blog">Blog</a>
+        <a class="page-link {% if page.url contains '/blog' or layout.name == 'post' %}active{% endif %}" href="{{ site.baseurl }}/blog">Blog</a>
         <a class="page-link {% if page.url contains '/newsletter' %}active{% endif %}" href="{{ site.baseurl }}/newsletter">Newsletter</a>
         <a class="page-link {% if page.url contains '/contact' %}active{% endif %}" href="{{ site.baseurl }}/contact">Contact</a>
       </div>
@@ -181,36 +181,16 @@
   transition: all 0.3s ease;
   padding: 8px 16px;
   border-radius: 20px;
-  position: relative;
 }
 
 .page-link:hover {
   color: #2d5a27;
-  background-color: rgba(88, 129, 87, 0.15);
-  transform: translateY(-1px);
+  background-color: rgba(88, 129, 87, 0.1);
 }
 
 .page-link.active {
   color: #2d5a27;
-  background-color: rgba(88, 129, 87, 0.2);
-  font-weight: 600;
-}
-
-.page-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 3px;
-  background-color: #2d5a27;
-  border-radius: 3px;
-  transition: width 0.3s ease;
-}
-
-.page-link.active:hover::after {
-  width: 40px;
+  background-color: rgba(88, 129, 87, 0.15);
 }
 
 @media screen and (max-width: 600px) {
@@ -227,10 +207,6 @@
   .trigger {
     flex-direction: column;
     gap: 10px;
-  }
-
-  .page-link.active::after {
-    bottom: 0;
   }
 }
 </style> 

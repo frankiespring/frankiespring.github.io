@@ -36,32 +36,36 @@ permalink: /blog/
       {% endif %}
     </div>
 
-    <div class="blog-grid">
-      {% for post in site.posts offset:1 %}
-        <article class="post-card">
-          {% if post.image %}
-            <div class="post-image">
-              <img src="{{ post.image }}" alt="{{ post.title }}">
+    {% assign non_featured_posts = site.posts | where_exp:"post", "post != featured_post" %}
+    {% if non_featured_posts.size > 0 %}
+      <h2 class="section-title">Latest Articles</h2>
+      <div class="blog-grid">
+        {% for post in non_featured_posts %}
+          <article class="post-card">
+            {% if post.image %}
+              <div class="post-image">
+                <img src="{{ post.image }}" alt="{{ post.title }}">
+              </div>
+            {% endif %}
+            <div class="post-content">
+              <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+              <p class="post-meta">
+                <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                {% if post.categories %}
+                  <span class="post-categories">
+                    {% for category in post.categories %}
+                      <a href="/blog/categories/{{ category | slugify }}">{{ category }}</a>
+                    {% endfor %}
+                  </span>
+                {% endif %}
+              </p>
+              <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+              <a href="{{ post.url }}" class="read-more">Read More →</a>
             </div>
-          {% endif %}
-          <div class="post-content">
-            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-            <p class="post-meta">
-              <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
-              {% if post.categories %}
-                <span class="post-categories">
-                  {% for category in post.categories %}
-                    <a href="/blog/categories/{{ category | slugify }}">{{ category }}</a>
-                  {% endfor %}
-                </span>
-              {% endif %}
-            </p>
-            <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-            <a href="{{ post.url }}" class="read-more">Read More →</a>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
 
     <div class="pagination">
       {% if paginator.previous_page %}
@@ -94,6 +98,13 @@ permalink: /blog/
   margin-bottom: 15px;
 }
 
+.section-title {
+  color: #2d5a27;
+  margin: 60px 0 30px;
+  font-size: 1.8em;
+  text-align: center;
+}
+
 .lead {
   font-size: 1.2em;
   color: #4a5568;
@@ -109,7 +120,7 @@ permalink: /blog/
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .featured-label {
@@ -192,32 +203,26 @@ permalink: /blog/
   font-size: 0.9em;
   color: #666;
   margin-bottom: 15px;
-}
-
-.post-categories {
-  margin-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .post-categories a {
   color: #2d5a27;
   text-decoration: none;
-  margin-right: 5px;
 }
 
 .post-categories a:hover {
   text-decoration: underline;
 }
 
-.excerpt {
-  color: #4a5568;
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
 .read-more {
+  display: inline-block;
   color: #2d5a27;
   text-decoration: none;
   font-weight: 500;
+  margin-top: 15px;
   transition: color 0.3s ease;
 }
 
