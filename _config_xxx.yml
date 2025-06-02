@@ -57,7 +57,7 @@ plugins:
 ###
 collections:
   books:
-    output: true
+    output: true 
     permalink: /books/:title/
 
 
