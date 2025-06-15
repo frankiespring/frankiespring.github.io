@@ -25,7 +25,7 @@ samples:
   - /assets/images/mandala-book-1/sample3.jpg
 video_url: '<iframe width="315" height="560" src="https://www.youtube.com/embed/Y1RwdCKAJiQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
 reviews:
-  - author: "Sarah J."
+  - author: "Sarah J"
     rating: 5
     text: "The perfect combination of mandalas and animals! My kids love it and I find it very relaxing too."
   - author: "Michael R."
